@@ -68,19 +68,21 @@ export class Router {
      */
 
     if (this[page] == null) {
-      console.error("Not a function!")
+      console.log("Not a function!")
       return;
     } 
+
     var hash;
     if (page == 'home') {
-      hash = "";
+      hash = ''
     } else {
-      hash = "#" + page;
+      hash = '#' + page;
     }
 
-    if (statePopped == false && window.location.hash != hash) {
+    if (!statePopped && window.location.hash != hash) {
       history.pushState(page, '', window.location + hash);
     }
+
     this[page]();
   }
 }
