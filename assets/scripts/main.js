@@ -237,10 +237,10 @@ function bindPopstate() {
    */
   window.addEventListener('popstate', function(event) {
     if (event.state != null) {
-      router.navigate(event.state.page, true);
+      router.navigate(event.state, true);
     }
     else {
-      router.navigate(home, true);
+      router.navigate("home", true);
     }
-  })
+  });
 }
