@@ -1,7 +1,22 @@
+
 // sw.js - This file needs to be in the root of the directory to work,
 //         so do not move it next to the other scripts
 
 const CACHE_NAME = 'lab-7-starter';
+var urlsToCache = [
+  '/',
+  'index.html',
+  'assets/styles/main.css',
+  'assets/scripts/main.js',
+  'assets/scripts/Router.js',
+  'assets/images/icons/0-star.svg',
+  'assets/images/icons/1-star.svg',
+  'assets/images/icons/2-star.svg',
+  'assets/images/icons/3-star.svg',
+  'assets/images/icons/4-star.svg',
+  'assets/images/icons/5-star.svg',
+  'assets/images/icons/arrow-down.png',
+];
 
 // Once the service worker has been installed, feed it some initial URLs to cache
 self.addEventListener('install', function (event) {
@@ -9,20 +24,7 @@ self.addEventListener('install', function (event) {
    * TODO - Part 2 Step 2
    * Create a function as outlined above
    */
-  let urlsToCache = [
-    "/",
-    "index.html",
-    "assets/styles/main.css",
-    "assets/scripts/main.js",
-    "assets/scripts/Router.js",
-    'assets/images/icons/0-star.svg',
-    'assets/images/icons/1-star.svg',
-    'assets/images/icons/2-star.svg',
-    'assets/images/icons/3-star.svg',
-    'assets/images/icons/4-star.svg',
-    'assets/images/icons/5-star.svg',
-    'assets/images/icons/arrow-down.png',
-  ];
+  
 
   event.waitUntil(
     caches.open(CACHE_NAME)
